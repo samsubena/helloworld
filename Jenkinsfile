@@ -7,16 +7,18 @@ pipeline {
             }
         } 
         
+        stage('Build') {
+            steps {
+                bat 'npm run build'
+            }
+        } 
+        
         stage('test') {
             steps {
                 bat 'npm test '
             }
         } 
         
-        stage('Build') {
-            steps {
-                bat 'npm run build'
-            }
-        } 
+        
     }
 }

@@ -16,18 +16,15 @@ pipeline {
     post {
              
         always {
-             
             echo 'post build'
-            
-               dir('/build/static/js/') {
-               def files = findFiles() 
-
-               files.each{ f -> 
-                  if(f.directory) {
+            dir('/build/static/js/') {
+                def files = findFiles() 
+                files.each{ f -> 
+                    if(f.directory) {
                     echo "This is directory: ${f.name} "
-                  }
-               }
- 
-        
+                    }
+                }
+            }
+        }
      } 
 }

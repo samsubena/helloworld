@@ -12,13 +12,11 @@ pipeline {
                 bat 'npm run build'
             }
         } 
-        
-        stage('test') {
-            steps {
-                bat 'npm test '
-            }
-        } 
-        
-        
     }
+    post {
+             
+        always {
+            echo 'post build'
+        }
+     } 
 }

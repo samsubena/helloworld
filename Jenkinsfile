@@ -11,14 +11,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{
-                    dir('/build/static/js/') {
-                        def files = findFiles() 
-                        files.each{ f -> 
-                            if(f.directory) {
-                            echo "This is directory: ${f.name} "
-                            }
-                        }
-                    }
+                    def dirOutput = bat("dir /B ${'build/static/js/'}", returnStdout: true)
+                    echo dirOutput
+                   
                 }
             }
         } 

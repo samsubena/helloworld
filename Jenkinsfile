@@ -11,8 +11,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{
-                    def dirOutput = bat("dir /B ${'build/static/js/'}", returnStdout: true)
-                    echo dirOutput
+                   sleep 10
+                   def dirOutput = bat("dir /B  /build/static/js/")
+                   echo dirOutput
                    
                 }
             }

@@ -17,7 +17,6 @@ pipeline {
              
         always {
             def mainJSFiles
-            
             dir('build/static/js/') {
                 mainJSFiles = findFiles(glob: '**/.js')
             }

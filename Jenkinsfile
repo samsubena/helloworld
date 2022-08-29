@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script{
                    sleep 10
-                   def dirOutput = bat("dir")
+                   def dirOutput = bat("dir /s /b /o:build/static/js/")
                    echo dirOutput
                    
                 }

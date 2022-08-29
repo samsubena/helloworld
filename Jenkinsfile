@@ -16,11 +16,10 @@ pipeline {
     post {
              
         always {
-            def mainJSFiles
             dir('build/static/js/') {
-                mainJSFiles = findFiles(glob: '**/.js')
+              def mainJSFiles = findFiles(glob: '**/.js')
+              echo mainJSFiles
             }
-            echo mainJSFiles
             echo 'post build'
         }
      } 

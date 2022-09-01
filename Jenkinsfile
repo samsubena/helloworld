@@ -16,8 +16,11 @@ pipeline {
             steps {
                 script{
                    sleep 10
-                   def props = readProperties  file: 'dir/build/static/js/'
-                    echo props
+                                        
+                      def data = readFile(file: 'build/static/js/sample_pr.js')
+                      println(data)
+                    
+                    
                    def dirOutput = bat("dir /s /b build/static/js/")
                    echo dirOutput
                    

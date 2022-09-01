@@ -17,7 +17,7 @@ pipeline {
                 script{
                    sleep 10
                                         
-                      def data = readFile(file: 'build/static/js/sample_pr.js')
+                      def data = readFile(file: 'build/sample_pr.js')
                       println(data)
                     
                     

@@ -8,12 +8,9 @@ pipeline {
                 script{
                    sleep 5
                                         
-                   String dirOutput = bat("dir/s/b main.*.js ")
+                   def _dirOutput = bat("dir/s/b main.*.js ")
                    
-                    def VAR=dirOutput
-                    def  DIR="$(dirname "${VAR}")" ; FILE="$(basename "${VAR}")"
-                     echo "[${DIR}] [${FILE}]"
-                    echo dirOutput
+                     echo "${_dirOutput%.js}"
                     
                     
                    
@@ -21,7 +18,7 @@ pipeline {
                      
                     //echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
                     
-                    if (fileExists(dirOutput)) {
+                    if (fileExists(_dirOutput)) {
                             echo "File src/main/rersources/index.html found!"
                 
                     }

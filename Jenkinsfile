@@ -9,10 +9,10 @@ pipeline {
                    sleep 5
                                         
                    def dirOutput = bat("dir/s/b main.*.js ")
-                    echo dirOutput
-                    def files = dirOutput
+                   
                     
-                    def values = dirOutput.split('/')
+                    
+                    def values = dirOutput.tokenize('/')
                     
                    
                     println(values)  

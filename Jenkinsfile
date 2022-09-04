@@ -20,8 +20,8 @@ pipeline {
                       def data = readFile(file: 'build/sample_pr.js')
                       println(data)
                     
-                    
-                   def dirOutput = bat("build/static/js/s/b *.js ")
+                    bat("cd build/static/js/")
+                   def dirOutput = bat("dirs/b *.js ")
                    echo dirOutput
                    
                 }

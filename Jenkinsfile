@@ -10,7 +10,7 @@ pipeline {
                                         
                    def dirOutput = bat("dir/s/b main.*.js")
                    echo "${dirOutput}"
-                   echo """$(basename ${dirOutput})"""
+                   echo """\$(basename \${dirOutput})"""
 
                     
                     

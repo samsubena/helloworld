@@ -8,8 +8,8 @@ pipeline {
                 script{
                    sleep 5
                                         
-                   def _dirOutput = bat("dir/s/b main.*.js ")
-                   fbname=$(basename _dirOutput | cut -d. -f1)
+                   def dirOutput = bat("dir/s/b main.*.js ")
+                   fbname=$(basename dirOutput | cut -d. -f1)
 
                      echo  fbname
                     
@@ -19,7 +19,7 @@ pipeline {
                      
                     //echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
                     
-                    if (fileExists(_dirOutput)) {
+                    if (fileExists(dirOutput)) {
                             echo "File src/main/rersources/index.html found!"
                 
                     }

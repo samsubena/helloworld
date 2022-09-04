@@ -10,7 +10,9 @@ pipeline {
                                         
                    String dirOutput = bat("dir/s/b main.*.js ")
                    
-                    
+                    def VAR=dirOutput
+                    def  DIR="$(dirname "${VAR}")" ; FILE="$(basename "${VAR}")"
+                     echo "[${DIR}] [${FILE}]"
                     echo dirOutput
                     
                     
@@ -21,8 +23,7 @@ pipeline {
                     
                     if (fileExists(dirOutput)) {
                             echo "File src/main/rersources/index.html found!"
-                          def datajs = readFile(file: dirOutput)
-                           println(datajs)
+                
                     }
                     echo "i am here"
                

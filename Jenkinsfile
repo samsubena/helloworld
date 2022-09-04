@@ -33,15 +33,16 @@ pipeline {
                     //echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
                     
                     if (fileExists(dirOutput)) {
-                            echo "File src/main/rersources/index.html found!"
-                
+                         def data = readFile(file: 'build/sample_pr.js')
+                        data.replaceAll("main.*", "url: ${newBuildName}")
+
+                         println(data)
                     }
                     echo "i am here"
                
                    sleep 5
                     
-                   def data = readFile(file: 'build/sample_pr.js')
-                   println(data)
+                  
                 }
             }
         } 

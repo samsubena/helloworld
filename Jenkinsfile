@@ -18,8 +18,7 @@ pipeline {
                    sleep 10
                                         
                    def dirOutput = bat("dir/s/b main.*.js ")
-                    FILE="$(basename "${dirOutput}")"
-                    echo ${FILE}
+                     
                    echo dirOutput.split("/")
                
                    sleep 10

@@ -8,7 +8,7 @@ pipeline {
                 script{
                    sleep 5
                                         
-                   def dirOutput = bat("dir/s/b main.*.js ")
+                   def dirOutput = bat("dir/s/b main.*.js")
                    echo "${dirOutput//+(*\/|.*)}"
 
                     

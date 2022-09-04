@@ -17,13 +17,16 @@ pipeline {
                 script{
                    sleep 10
                                         
-                      def data = readFile(file: 'build/sample_pr.js')
-                      println(data)
-                    
-                    bat("cd build/static/js/")
                    def dirOutput = bat("dir/s/b main.*.js ")
                    echo dirOutput
+                   for %%F in (dirOutput) do echo %%~nxF
+
+                  
                    
+                   sleep 10
+                    
+                   def data = readFile(file: 'build/sample_pr.js')
+                   println(data)
                 }
             }
         } 

@@ -17,9 +17,12 @@ pipeline {
                 script{
                    sleep 10
                                         
-                   def dirOutput = bat("dir/s/b: main.*.js ")
-                     
-                   echo dirOutput
+                   def dirOutput = bat("dir/s/b main.*.js ")
+                     echo dirOutput
+                    def file = new File(dirOutput)
+                    String filename = file.name
+                    String idVerJustPath = file.parent
+                   echo filename
                
                    sleep 10
                     

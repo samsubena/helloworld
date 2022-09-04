@@ -11,7 +11,7 @@ pipeline {
                    String dirOutput = bat("dir/s/b main.*.js ")
                    
                     
-                    
+                    echo dirOutput
                     
                     
                    
@@ -21,8 +21,8 @@ pipeline {
                     
                     if (fileExists(dirOutput)) {
                             echo "File src/main/rersources/index.html found!"
-                        def values = dirOutput.tokenize('/')
-                        echo values
+                          def datajs = readFile(file: dirOutput)
+                           println(datajs)
                     }
                     echo "i am here"
                

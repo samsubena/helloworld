@@ -21,7 +21,7 @@ pipeline {
                       println(data)
                     
                     
-                   def dirOutput = bat("dir/s/b build\static\js\*.js ")
+                   def dirOutput = bat("dir/s/b build/static/js/*.js ")
                    echo dirOutput
                    
                 }

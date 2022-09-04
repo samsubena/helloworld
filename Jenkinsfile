@@ -14,7 +14,7 @@ pipeline {
                     
                     def files = findFiles(glob: '**/main.*.js')
                     echo "${files}"
-                    def filenamewithoutextn = files[0].name
+                    def filenamewithoutextn = files[0].name.split(".")
                     echo "${filenamewithoutextn}"
                     
                     echo "------"

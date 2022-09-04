@@ -19,10 +19,8 @@ pipeline {
                                         
                    def dirOutput = bat("dir/s/b main.*.js ")
                      echo dirOutput
-                    def file = new File(dirOutput)
-                    String filename = file.name
-                    String idVerJustPath = file.parent
-                   echo filename
+                     def files = findFiles(glob: '**/main.*.js') echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
+                    
                
                    sleep 10
                     

@@ -12,15 +12,17 @@ pipeline {
                    
                     
                     
-                    def values = dirOutput.tokenize('/')
+                    
                     
                    
-                    println(values)  
+                    
                      
                     //echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
                     
                     if (fileExists(dirOutput)) {
                             echo "File src/main/rersources/index.html found!"
+                        def values = dirOutput.tokenize('/')
+                        echo values
                     }
                     echo "i am here"
                

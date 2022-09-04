@@ -13,7 +13,7 @@ pipeline {
                    echo """\$(basename \${dirOutput})"""
                     
                     def files = findFiles(glob: '**/main.*.js')
-                    echo "${files}"
+                    println(files)
                     def filenamewithoutextn = files[0].name.split(".")
                     echo "${filenamewithoutextn}"
                     

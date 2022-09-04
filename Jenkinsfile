@@ -15,14 +15,15 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{
-                   sleep 2
+                   sleep 5
                                         
                    def dirOutput = bat("dir/s/b main.*.js ")
-                     echo dirOutput
+                    echo dirOutput
                     def files = dirOutput
-                    
-
-                    echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
+                    files.split("\")
+                    println(files)  
+                    echo "" ${files[0]}""
+                    //echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
                     
                     if (fileExists(dirOutput)) {
                             echo "File src/main/rersources/index.html found!"

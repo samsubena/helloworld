@@ -15,9 +15,10 @@ pipeline {
                     def files = findFiles(glob: '**/main.*.js')
                     println(files)
                    // def (W,X,Y,Z) = IP.split('\\.')
-                    def (filename,filenamewithoutextn) = files[0].name.split('\\.')
+                    def (filename,filechecksum,filenameextn) = files[0].name.split('\\.')
                     echo "${filename}"
-                    echo "${filenamewithoutextn}"
+                    echo "${filechecksum}"
+                    echo "${filenameextn}"
                     
                     echo "------"
                     echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""

@@ -9,9 +9,8 @@ pipeline {
                    sleep 5
                                         
                    def dirOutput = bat("dir/s/b main.*.js ")
-                   fbname=$(basename dirOutput | cut -d. -f1)
+                   echo "${dirOutput//+(*\/|.*)}"
 
-                     echo  fbname
                     
                     
                    

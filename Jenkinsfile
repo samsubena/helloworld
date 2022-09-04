@@ -18,11 +18,10 @@ pipeline {
                    sleep 10
                                         
                    def dirOutput = bat("dir/s/b main.*.js ")
-                   echo dirOutput
-                   for %%F in (dirOutput) do echo %%~nxF
-
-                  
-                   
+                    FILE="$(basename "${dirOutput}")"
+                    echo ${FILE}
+                   echo dirOutput.split("/")
+               
                    sleep 10
                     
                    def data = readFile(file: 'build/sample_pr.js')

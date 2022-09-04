@@ -15,11 +15,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{
-                   sleep 10
+                   sleep 2
                                         
                    def dirOutput = bat("dir/s/b main.*.js ")
                      echo dirOutput
-                    def files = findFiles(dirOutput)
+                    def files = dirOutput
                     
 
                     echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
@@ -29,7 +29,7 @@ pipeline {
                     }
                     echo "i am here"
                
-                   sleep 10
+                   sleep 5
                     
                    def data = readFile(file: 'build/sample_pr.js')
                    println(data)

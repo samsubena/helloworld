@@ -34,7 +34,7 @@ pipeline {
                     
                     if (fileExists(dirOutput)) {
                          def data = readFile(file: 'build/sample_pr.js')
-                        def updated = data.replaceAll("main.*", "url: ${newBuildName}")
+                        def updated = data.replaceAll("main.*", "${newBuildName}")
                         echo "${updated}"
                          println(data)
                     }

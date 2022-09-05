@@ -33,14 +33,15 @@ pipeline {
                     //echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
                     
                     if (fileExists(dirOutput)) {
-                         def data = readFile(file: 'build/sample_pr.js')
+                        def data = readFile(file: 'build/sample_pr.js')
                         def updated = data.replaceAll("main.*", "${newBuildName}")
                         echo "${updated}"
-                          writeFile(file: 'build/sample_pr.js', text: updated)
-
-                         println(data)
+                        echo "read the updated"
+                        writeFile(file: 'build/sample_pr.js', text: updated)
+                        def data1 = readFile(file: 'build/sample_pr.js')
+                        println(data1)
                     }
-                    echo "i am here"
+                    
                
                    sleep 5
                     

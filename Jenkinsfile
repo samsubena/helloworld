@@ -37,7 +37,7 @@ pipeline {
                         def updated = data.replaceAll("main.*", "${newBuildName}")
                         echo "${updated}"
                         echo "read the updated"
-                        writeFile(file: 'build/sample_pr.js', text: updated)
+                        writeFile(file: 'build/RB_referral.js', text: updated)
                         def data1 = readFile(file: 'build/sample_pr.js')
                         println(data1)
                     }

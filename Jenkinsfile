@@ -21,7 +21,7 @@ pipeline {
                    sleep 5
                                         
                    def dirOutput = bat("dir/s/b main.*.js")
-                   echo "${dirOutput}"
+                   echo "${dirOutput}"+"dirOutput";
                    
                     
                     def files = findFiles(glob: '**/main.*.js')
